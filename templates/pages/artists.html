@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% extends 'layouts/main.html' %}
+{% block title %}Fyyur | Artists{% endblock %}
+{% block content %}
+<ul class="items">
+	{% for artist in artists %}
+	<li>
+    <a href="/artists/{{ artist.id }}" >
+      <i class="fas fa-users"></i>
+      <div class="item">
+        <h5>{{ artist.name }}</h5>
+      </div>
+      <a href= '/artists/{{ artist.id }}/edit'>
+        <i class="fa fa-edit"></i>
+      </a>
+      <a href = '/artists/{{ artist.id }}/delete' >  
+        <i class="fa fa-close"></i>
+      </a>
+    </a>
+	
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}
